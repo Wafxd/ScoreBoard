@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    padding: 0 15px;
+}
+
+/* Table Styles */
+.score-table {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.score-table th {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.score-table td {
+    vertical-align: middle;
+}
+
+/* Score Display */
+.score-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.score-digit {
+    height: 30px;
+    width: auto;
+}
+
+/* Team Logo */
+.team-logo {
+    text-align: center;
+    width: 120px;
+}
+
+.team-img {
+    max-height: 100px; /* Increase the size for Android */
+    max-width: 140px;
+    object-fit: contain;
+}
+
+/* Button Styles */
+.action-buttons {
+    display: flex;
+    flex-direction: row; /* Change to horizontal layout */
+    justify-content: center; /* Horizontally center the buttons */
+    align-items: center; /* Vertically center the buttons */
+    gap: 8px;
+    height: 100%;
+}
+
+/* Adjust the button sizes and give them an angle */
+.score-btn {
+    padding: 5px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg); /* Rotate buttons slightly */
+}
+
+.score-button {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg); /* Counter-rotate the icon so it appears normal */
+}
+
+.save-btn {
+    padding: 5px 12px;
+    font-size: 14px;
+    transform: rotate(0deg); /* Ensure the 'Save' button is not rotated */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .team-img {
+        max-height: 50px; /* Increase size for better visibility on smaller screens */
+    }
+    
+    .team-logo {
+        width: 100px;
+    }
+    
+    .score-digit {
+        height: 24px;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+    }
+    
+    .score-btn {
+        width: 40px; /* Increase size for better touch targets */
+        height: 40px;
+    }
+    
+    .score-button {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .save-btn {
+        padding: 6px 14px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-img {
+        max-height: 40px; /* Adjust for even smaller screens */
+    }
+    
+    .team-logo {
+        width: 90px;
+    }
+    
+    .score-digit {
+        height: 22px;
+    }
+
+    .action-buttons {
+        gap: 8px;
+    }
+
+    .score-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .score-button {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .save-btn {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+}

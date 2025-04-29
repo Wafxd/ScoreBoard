@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoring Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-3 mb-4">Scoring Board</h2>
+        <table class="table table-bordered score-table">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Score</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="team-logo"><img src="assets/img/team1.png" alt="Team 1" class="team-img"></td>
+                    <td>
+                        <div class="score-display" id="score-img1">
+                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                        </div>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="changeScore(0, -1)" class="btn btn-light score-btn">
+                            <img src="assets/img/Minus button2.png" class="score-button" alt="Minus" />
+                        </button>
+                        <button onclick="changeScore(0, 1)" class="btn btn-light score-btn">
+                            <img src="assets/img/plus button.png" class="score-button" alt="Plus" />
+                        </button>
+                        <button onclick="saveScore(0)" class="btn btn-primary save-btn">SAVE</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="team-logo"><img src="assets/img/team2.png" alt="Team 2" class="team-img"></td>
+                    <td>
+                        <div class="score-display" id="score-img2">
+                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                        </div>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="changeScore(1, -1)" class="btn btn-light score-btn">
+                            <img src="assets/img/Minus button2.png" class="score-button" alt="Minus" />
+                        </button>
+                        <button onclick="changeScore(1, 1)" class="btn btn-light score-btn">
+                            <img src="assets/img/plus button.png" class="score-button" alt="Plus" />
+                        </button>
+                        <button onclick="saveScore(1)" class="btn btn-primary save-btn">SAVE</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="team-logo"><img src="assets/img/team3.png" alt="Team 3" class="team-img"></td>
+                    <td>
+                        <div class="score-display" id="score-img3">
+                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                        </div>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="changeScore(2, -1)" class="btn btn-light score-btn">
+                            <img src="assets/img/Minus button2.png" class="score-button" alt="Minus" />
+                        </button>
+                        <button onclick="changeScore(2, 1)" class="btn btn-light score-btn">
+                            <img src="assets/img/plus button.png" class="score-button" alt="Plus" />
+                        </button>
+                        <button onclick="saveScore(2)" class="btn btn-primary save-btn">SAVE</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="team-logo"><img src="assets/img/team4.png" alt="Team 4" class="team-img"></td>
+                    <td>
+                        <div class="score-display" id="score-img4">
+                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                        </div>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="changeScore(3, -1)" class="btn btn-light score-btn">
+                            <img src="assets/img/Minus button2.png" class="score-button" alt="Minus" />
+                        </button>
+                        <button onclick="changeScore(3, 1)" class="btn btn-light score-btn">
+                            <img src="assets/img/plus button.png" class="score-button" alt="Plus" />
+                        </button>
+                        <button onclick="saveScore(3)" class="btn btn-primary save-btn">SAVE</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="team-logo"><img src="assets/img/team5.png" alt="Team 5" class="team-img"></td>
+                    <td>
+                        <div class="score-display" id="score-img5">
+                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                        </div>
+                    </td>
+                    <td class="action-buttons">
+                        <button onclick="changeScore(4, -1)" class="btn btn-light score-btn">
+                            <img src="assets/img/Minus button2.png" class="score-button" alt="Minus" />
+                        </button>
+                        <button onclick="changeScore(4, 1)" class="btn btn-light score-btn">
+                            <img src="assets/img/plus button.png" class="score-button" alt="Plus" />
+                        </button>
+                        <button onclick="saveScore(4)" class="btn btn-primary save-btn">SAVE</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Initialize scores for 5 teams starting at 0
+        let scores = [0, 0, 0, 0, 0];
+
+        function updateScoreImage(teamIndex) {
+            const scoreValue = scores[teamIndex];
+            const scoreDigits = scoreValue.toString().split('');
+
+            const scoreContainer = document.getElementById(`score-img${teamIndex + 1}`);
+            scoreContainer.innerHTML = '';
+
+            scoreDigits.forEach(digit => {
+                const img = document.createElement('img');
+                img.src = `assets/img/num${digit}.png`;
+                img.alt = `Score ${digit}`;
+                img.className = 'score-digit';
+                scoreContainer.appendChild(img);
+            });
+        }
+
+        function changeScore(teamIndex, delta) {
+            scores[teamIndex] += delta;
+            scores[teamIndex] = Math.max(0, Math.min(999, scores[teamIndex]));
+            updateScoreImage(teamIndex);
+        }
+
+        function saveScore(teamIndex) {
+            alert(`Score for Team ${teamIndex + 1} saved: ${scores[teamIndex]}`);
+        }
+
+        // Initialize all score displays
+        window.onload = function() {
+            for (let i = 0; i < 5; i++) {
+                updateScoreImage(i);
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
