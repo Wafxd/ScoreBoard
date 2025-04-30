@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2 class="text-center mt-3 mb-4">Scoring Board</h2>
-        <table class="table table-bordered score-table">
+        <table class="table table-bordered score-table" style="background-color: black;">
             <thead>
                 <tr>
                     <th>Team</th>
@@ -23,7 +23,7 @@
                     <td class="team-logo"><img src="assets/img/team1.png" alt="Team 1" class="team-img"></td>
                     <td>
                         <div class="score-display" id="score-img1">
-                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                            <img src="assets/img/numb0.png" alt="Score" class="score-digit" />
                         </div>
                     </td>
                     <td class="action-buttons">
@@ -40,7 +40,7 @@
                     <td class="team-logo"><img src="assets/img/team2.png" alt="Team 2" class="team-img"></td>
                     <td>
                         <div class="score-display" id="score-img2">
-                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                            <img src="assets/img/numb0.png" alt="Score" class="score-digit" />
                         </div>
                     </td>
                     <td class="action-buttons">
@@ -57,7 +57,7 @@
                     <td class="team-logo"><img src="assets/img/team3.png" alt="Team 3" class="team-img"></td>
                     <td>
                         <div class="score-display" id="score-img3">
-                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                            <img src="assets/img/numb0.png" alt="Score" class="score-digit" />
                         </div>
                     </td>
                     <td class="action-buttons">
@@ -74,7 +74,7 @@
                     <td class="team-logo"><img src="assets/img/team4.png" alt="Team 4" class="team-img"></td>
                     <td>
                         <div class="score-display" id="score-img4">
-                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                            <img src="assets/img/numb0.png" alt="Score" class="score-digit" />
                         </div>
                     </td>
                     <td class="action-buttons">
@@ -91,7 +91,7 @@
                     <td class="team-logo"><img src="assets/img/team5.png" alt="Team 5" class="team-img"></td>
                     <td>
                         <div class="score-display" id="score-img5">
-                            <img src="assets/img/num0.png" alt="Score" class="score-digit" />
+                            <img src="assets/img/numb0.png" alt="Score" class="score-digit" />
                         </div>
                     </td>
                     <td class="action-buttons">
@@ -121,7 +121,7 @@
 
             scoreDigits.forEach(digit => {
                 const img = document.createElement('img');
-                img.src = `assets/img/num${digit}.png`;
+                img.src = `assets/img/numb${digit}.png`;
                 img.alt = `Score ${digit}`;
                 img.className = 'score-digit';
                 scoreContainer.appendChild(img);

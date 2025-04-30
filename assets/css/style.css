@@ -32,12 +32,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    gap: 0px;
 }
 
+
 .score-digit {
-    height: 30px;
+    height: 50px;
     width: auto;
+    padding: 0px;
 }
 
 /* Team Logo */
@@ -97,7 +99,7 @@ body {
     }
     
     .score-digit {
-        height: 24px;
+        height: 44px;
     }
     
     .action-buttons {
@@ -122,7 +124,7 @@ body {
 
 @media (max-width: 576px) {
     .team-img {
-        max-height: 40px; /* Adjust for even smaller screens */
+        max-height: 80px; /* Adjust for even smaller screens */
     }
     
     .team-logo {
@@ -130,7 +132,7 @@ body {
     }
     
     .score-digit {
-        height: 22px;
+        height: 62px;
     }
 
     .action-buttons {
