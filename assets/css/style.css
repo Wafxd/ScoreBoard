@@ -7,15 +7,20 @@ body {
 .container {
     max-width: 800px;
     padding: 0 15px;
+    padding-bottom: 50px;
 }
 
 /* Table Styles */
 .score-table {
-    background-color: white;
+    background-color: black;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid rgb(0, 0, 0); /* Menambahkan garis hitam pada sel tabel */
+
 }
+
+
 
 .score-table th {
     background-color: #343a40;
@@ -26,6 +31,8 @@ body {
 .score-table td {
     vertical-align: middle;
 }
+
+
 
 /* Score Display */
 .score-display {
@@ -74,6 +81,7 @@ body {
     align-items: center;
     justify-content: center;
     transform: rotate(45deg); /* Rotate buttons slightly */
+    margin-top: 20px;
 }
 
 .score-button {
@@ -86,6 +94,8 @@ body {
     padding: 5px 12px;
     font-size: 14px;
     transform: rotate(0deg); /* Ensure the 'Save' button is not rotated */
+    margin-top: 20px;
+
 }
 
 /* Responsive Styles */
